@@ -2,15 +2,15 @@ program CrudProdutos;
 
 uses
   Vcl.Forms,
-  MainUnit in 'MainUnit.pas' {Form1} ,
-  DmUnit in 'DmUnit.pas' {DM: TDataModule};
+  MainUnit in 'MainUnit.pas' {LojaProdutos},
+  RegistroDeProdutos in 'RegistroDeProdutos.pas' {DM: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TLojaProdutos, LojaProdutos);
   Application.CreateForm(TDM, DM);
   Application.Run;
 end.
