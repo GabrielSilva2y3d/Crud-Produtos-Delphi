@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = -4754
-  Top = -2726
+object LojaProdutos: TLojaProdutos
+  Left = 0
+  Top = 0
   Caption = 'Registro de Produtos'
-  ClientHeight = 450
-  ClientWidth = 719
+  ClientHeight = 446
+  ClientWidth = 721
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,15 +11,15 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesigned
+  ShowHint = True
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 16
-    Top = 24
-    Width = 251
+    Left = 200
+    Top = 16
+    Width = 309
     Height = 29
-    Caption = 'Registro de Produtos'
+    Caption = 'REGISTRO DE PRODUTOS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -24
@@ -36,129 +36,74 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 16
-    Top = 152
-    Width = 102
+    Top = 190
+    Width = 46
     Height = 13
-    Caption = 'Descri'#231#227'o do Produto'
+    Caption = 'Descri'#231#227'o'
   end
   object Label4: TLabel
-    Left = 16
-    Top = 288
+    Left = 40
+    Top = 136
+    Width = 27
+    Height = 13
+    Caption = 'Pre'#231'o'
+  end
+  object Label5: TLabel
+    Left = 168
+    Top = 136
     Width = 39
     Height = 13
     Caption = 'Estoque'
   end
-  object Label5: TLabel
+  object Label6: TLabel
     Left = 16
     Top = 352
     Width = 55
     Height = 13
     Caption = 'Fornecedor'
   end
-  object Label6: TLabel
-    Left = 200
-    Top = 288
-    Width = 27
+  object Label7: TLabel
+    Left = 21
+    Top = 158
+    Width = 13
     Height = 13
-    Caption = 'Pre'#231'o'
+    Caption = 'R$'
   end
   object Label8: TLabel
-    Left = 180
-    Top = 309
-    Width = 14
-    Height = 14
-    Caption = 'R$'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label9: TLabel
-    Left = 105
-    Top = 309
-    Width = 49
-    Height = 14
-    Caption = 'Unidades'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label7: TLabel
     Left = 496
-    Top = 88
-    Width = 92
+    Top = 67
+    Width = 97
     Height = 13
-    Caption = 'Buscar por produto'
+    Caption = 'Filtrar Produtos por:'
   end
-  object DBEdit1: TDBEdit
-    Left = 16
-    Top = 109
-    Width = 251
-    Height = 21
-    DataField = 'nome'
-    DataSource = DM.DSprodutos
-    TabOrder = 0
+  object Label10: TLabel
+    Left = 416
+    Top = 94
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
   end
-  object DBMemo1: TDBMemo
-    Left = 16
-    Top = 171
-    Width = 312
-    Height = 102
-    DataField = 'descricao'
-    DataSource = DM.DSprodutos
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 1
+  object Label11: TLabel
+    Left = 512
+    Top = 94
+    Width = 55
+    Height = 13
+    Caption = 'Fornecedor'
   end
-  object DBEdit2: TDBEdit
-    Left = 200
-    Top = 307
-    Width = 89
-    Height = 21
-    Hint = 
-      'Insira o pre'#231'o do produto, utilize "," para separar as casas dec' +
-      'imais.'
-    DataField = 'preco'
-    DataSource = DM.DSprodutos
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 2
-  end
-  object DBEdit3: TDBEdit
-    Left = 16
-    Top = 307
-    Width = 83
-    Height = 21
-    Hint = 
-      'Insira a quantidade de produtos em estoque, apenas n'#250'meros s'#227'o p' +
-      'ermitidos.'
-    DataField = 'estoque'
-    DataSource = DM.DSprodutos
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 3
-  end
-  object DBEdit4: TDBEdit
-    Left = 16
-    Top = 371
-    Width = 299
-    Height = 21
-    DataField = 'fornecedor'
-    DataSource = DM.DSprodutos
-    TabOrder = 4
+  object Label12: TLabel
+    Left = 632
+    Top = 93
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
   end
   object DBGrid1: TDBGrid
-    Left = 352
-    Top = 152
-    Width = 361
-    Height = 263
+    Left = 376
+    Top = 139
+    Width = 337
+    Height = 298
     DataSource = DM.DSprodutos
-    TabOrder = 5
+    TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -169,13 +114,13 @@ object Form1: TForm1
         Expanded = False
         FieldName = 'id'
         Title.Caption = 'C'#243'digo'
-        Width = 39
+        Width = 42
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nome'
-        Width = 92
+        Width = 71
         Visible = True
       end
       item
@@ -187,36 +132,113 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'estoque'
-        Width = 55
+        Width = 46
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'fornecedor'
-        Width = 124
         Visible = True
       end>
   end
-  object DBNavigator1: TDBNavigator
-    Left = 8
-    Top = 408
-    Width = 320
-    Height = 35
-    Hint = 
-      'Controle de registro, aqui voc'#234' pode adicionar(+), retirar(-) e ' +
-      'editar(^) os produtos. Para confirmar o registro clique em ('#10003'), ' +
-      'para negar clique em (X).'
+  object DBEdit1: TDBEdit
+    Left = 16
+    Top = 107
+    Width = 249
+    Height = 21
+    Hint = 'Insira o nome do produto'
+    DataField = 'nome'
     DataSource = DM.DSprodutos
-    ParentShowHint = False
-    ShowHint = True
+    TabOrder = 1
+  end
+  object DBMemo1: TDBMemo
+    Left = 16
+    Top = 212
+    Width = 321
+    Height = 133
+    DataField = 'descricao'
+    DataSource = DM.DSprodutos
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 40
+    Top = 155
+    Width = 97
+    Height = 21
+    Hint = 
+      'Insira o pre'#231'o do produto, apenas numeros s'#227'o permitidos. (use "' +
+      '," para separar as casas decimais.)'
+    DataField = 'preco'
+    DataSource = DM.DSprodutos
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 168
+    Top = 155
+    Width = 97
+    Height = 21
+    Hint = 'Insira o estoque em unidades, apenas n'#250'meros s'#227'o permitidos.'
+    DataField = 'estoque'
+    DataSource = DM.DSprodutos
+    TabOrder = 4
+  end
+  object DBEdit4: TDBEdit
+    Left = 16
+    Top = 371
+    Width = 249
+    Height = 21
+    DataField = 'fornecedor'
+    DataSource = DM.DSprodutos
+    TabOrder = 5
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 16
+    Top = 400
+    Width = 340
+    Height = 33
+    DataSource = DM.DSprodutos
+    Hints.Strings = (
+      'Primeiro Produto'
+      'Produto Anterior'
+      'Pr'#243'ximo Produto'
+      'Ultimo Produto'
+      'Inserir Produto'
+      'Deletar Produto'
+      'Editar Produto'
+      'Postar Produto'
+      'Cancelar Produto'
+      'Recarregar dados'
+      'Aplicar Atualiza'#231#245'es'
+      'Cancelar Atualiza'#231#245'es')
     TabOrder = 6
   end
-  object Busca: TEdit
-    Left = 442
-    Top = 107
-    Width = 207
+  object BuscarNome: TEdit
+    Left = 384
+    Top = 113
+    Width = 89
     Height = 21
+    Hint = 'Escreva o nome do produto para ser encaminhado at'#233' ele.'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 7
-    OnChange = BuscaChange
+    OnChange = BuscarNomeChange
+  end
+  object BuscarForn: TEdit
+    Left = 496
+    Top = 113
+    Width = 89
+    Height = 21
+    Hint = 'Escreva o fornecedor do produto para ser encaminhado at'#233' ele'
+    TabOrder = 8
+    OnChange = BuscarFornChange
+  end
+  object BuscarCod: TEdit
+    Left = 608
+    Top = 112
+    Width = 89
+    Height = 21
+    Hint = 'Escreva o c'#243'digo do produto para ser encaminhado at'#233' ele'
+    TabOrder = 9
+    OnChange = BuscarCodChange
   end
 end
